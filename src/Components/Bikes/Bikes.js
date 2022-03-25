@@ -8,11 +8,18 @@ const Bikes = () => {
         .then(res => res.json())
         .then(data => setBikes(data))
     } ,[])
-    const [product, setProduct] = useState([])
+    let [product, setProduct] = useState([])
     const addToCart = (bike) => {
         const newProduct = [...product,bike]
-        setProduct(newProduct);
+        const newItem = [...new Set(newProduct)]
+        setProduct(newItem);
     }
+    const deleteItem = () => {
+        const newProduct = [];
+        setProduct(newProduct)
+    }
+
+
     return (
         <div className='store-bike'>
         <div className='bikes-container'>
@@ -25,18 +32,20 @@ const Bikes = () => {
             }
         </div>
         <div className='order-container'>
-            <p>Order Summary
+                  Order Summary
+            <div>
                <div>
                {
-                    product.map(bikeItem => 
-                    <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+                   product.map(bikeItem =>
+                    <div key={bikeItem.id} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
                         <img style={{width:90, borderRadius:9, marginRight:30}} src={bikeItem.img} alt="" />
-                    <h6 key={bikeItem.id}>{bikeItem.name}</h6>
+                    <h5 key={bikeItem.id}>{bikeItem.name}</h5>
                     </div>
                     )
                 }
+                <button onClick={deleteItem}>Clear Item</button>
                </div>
-            </p>
+            </div>
         </div>
         </div>
     );
