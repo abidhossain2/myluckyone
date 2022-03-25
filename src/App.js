@@ -6,8 +6,10 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
+
       <Bikes></Bikes>
-    </div>
+      </div>
+
   );
 }
 

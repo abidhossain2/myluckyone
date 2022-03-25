@@ -1,0 +1,24 @@
+.store-bike{
+    display: grid;
+    grid-template-columns: 4fr  1fr;
+}
+
+.bikes-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin: 40px;
+}
+
+@media (max-width: 480px) {
+    .bikes-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+.order-container p{
+    position: fixed;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}

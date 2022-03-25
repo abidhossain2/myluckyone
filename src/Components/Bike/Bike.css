@@ -1,0 +1,31 @@
+.bike-container{
+    border: 1px solid #dac8c8;
+    width: 305px;
+    height: 350px;
+    border-radius: 9px;
+    padding: 8px;
+}
+
+.bike-container img{
+    width: 300px;
+    height: 200px;
+    border-radius: 9px;
+}
+
+.btn{
+    background-color: rgb(165, 154, 154);
+    outline: none;
+    width: 140px;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.cart-icon{
+    font-size: 17px;
+    margin-left: 10px;
+}
