@@ -12,8 +12,8 @@ const Bikes = () => {
         <div>
             {
                 bikes.map(bike => <Bike 
-                key={bike.id}>
-                bike={bike}
+                key={bike.id}
+                bike={bike}>
                 </Bike>)
             }
         </div>
