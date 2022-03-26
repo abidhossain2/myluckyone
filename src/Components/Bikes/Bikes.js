@@ -47,7 +47,7 @@ const Bikes = () => {
         <div className='order-container'>
             <div>
                 <p className='order'>Order Summary</p>
-                <p id='choose' style={{marginTop:60, fontSize:14, background:'aqua', padding:10, borderRadius:9}}></p>
+                <p id='choose' style={{marginTop:60, fontSize:14, background:'aqua', padding:10, borderRadius:9, position:'fixed'}}></p>
             </div>
 
             <div className='single-bike'>
