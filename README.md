@@ -1,3 +1,3 @@
 # Bike Gallery
 
-https://bikegallery.netlify.app/
+https://bikeworldgallery.netlify.app/
