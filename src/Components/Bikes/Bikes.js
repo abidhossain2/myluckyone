@@ -22,8 +22,7 @@ const Bikes = () => {
     const chooseItem = (bike) => {
         const newProduct = [...product,bike]
         const newItem = [...new Set(newProduct)]
-        setProduct(newItem);
-        const ans = newProduct[Math.floor(Math.random() * newProduct.length)].name;
+        const ans = newItem[Math.floor(Math.random() * (newItem.length - 1))].name;
         let result = document.getElementById('choose');
         result.innerText = ans
     }
