@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Bike from '../Bike/Bike';
 import './Bikes.css'
+
 const Bikes = () => {
     const [bikes, setBikes] = useState([])
     useEffect( () => {
@@ -13,8 +14,9 @@ const Bikes = () => {
         const newProduct = [...product,bike]
         const newItem = [...new Set(newProduct)]
         setProduct(newItem);
-        if(newItem.length > 4){
-            
+        if(newProduct.length > 4){
+            alert('You can not add more than 4 photos!')
+            setProduct([])
         }
     }
     const chooseItem = (bike) => {
@@ -31,7 +33,8 @@ const Bikes = () => {
         document.getElementById('choose').innerText = "";
     }
     return (
-        <div className='store-bike'>
+        <div>
+            <div className='store-bike'>
         <div className='bikes-container'>
             {
                 bikes.map(bike => <Bike 
@@ -43,7 +46,7 @@ const Bikes = () => {
         </div>
         <div className='order-container'>
             <div>
-                <p>Order Summary</p>
+                <p className='order'>Order Summary</p>
                 <p id='choose' style={{marginTop:60, fontSize:14, background:'aqua', padding:10, borderRadius:9}}></p>
             </div>
 
@@ -51,8 +54,8 @@ const Bikes = () => {
             {
                 product.map(bikeItem =>
                     <div key={bikeItem.id} style={{display:'flex', justifyContent:'center', alignItems:'center', marginTop:10}}>
-                    <img style={{width:90, borderRadius:9, marginRight:30}} src={bikeItem.img} alt="" />
-                    <h6 key={bikeItem.id}>{bikeItem.name}</h6>
+                    <img src={bikeItem.img} alt="" />
+                    <p className='bike-name' key={bikeItem.id}>{bikeItem.name}</p>
                     </div>
                     )
             }
@@ -63,6 +66,7 @@ const Bikes = () => {
             <button onClick={chooseItem}>Click for lucky</button>
             </div>
             </div>
+        </div>
         </div>
         </div>
     );
