@@ -16,9 +16,37 @@
         grid-template-columns: repeat(1,1fr);
     }
 }
-.order-container p{
-    position: fixed;
+.order-container {
+    position: sticky;
     font-size: 25px;
     font-weight: bold;
     text-align: center;
+}
+.order-container p{
+    position:fixed;
+}
+
+.single-bike{
+    position: fixed;
+    margin-top: 80px;
+}
+
+.deleteBtn button{
+    padding: 8px;
+    border-radius: 9px;
+    border: none;
+    background-color: rgb(243, 68, 68);
+    color: white;
+    font-size: 16px;
+    cursor: pointer
+}
+
+.chooseBtn button{
+    padding: 8px;
+    border-radius: 9px;
+    border: none;
+    background-color: rgb(129, 136, 29);
+    color: white;
+    font-size: 16px;
+    cursor: pointer
 }
