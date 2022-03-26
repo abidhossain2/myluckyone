@@ -43,7 +43,7 @@
 
 @media (max-width:480px) {
     .single-bike{
-        margin-top: 126px;
+        margin-top: 92px;
     }
 }
 .single-bike img{
@@ -65,7 +65,7 @@
     .order-container .single-bike .bike-name{
         font-size: 13px;
         margin-top: 17px;
-        margin-left: 17px;
+        margin-left: -78px;
     }
 }
 .deleteBtn button{
