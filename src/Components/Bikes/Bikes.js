@@ -10,8 +10,8 @@ const Bikes = () => {
         .then(data => setBikes(data))
     } ,[])
     const [product, setProduct] = useState([])
-    const addToCart = (bike) => {
-        const newProduct = [...product,bike]
+    const addToCart = (bikes) => {
+        const newProduct = [...product,bikes]
         const newItem = [...new Set(newProduct)]
         setProduct(newItem);
         if(newProduct.length > 4){
@@ -19,18 +19,25 @@ const Bikes = () => {
             setProduct([])
         }
     }
-    const chooseItem = (bike) => {
-        const newProduct = [...product,bike]
-        const newItem = [...new Set(newProduct)]
-        const ans = newItem[Math.floor(Math.random() * (newItem.length - 1))].name;
-        let result = document.getElementById('choose');
-        result.innerText = ans
+    const [choose, setChoose] = useState([])
+    const chooseItem = () => {;
+        // const newProduct = [...product,biked]
+        const newChoose = [...choose]
+        // const newItem = [...new Set(newProduct)]
+        // const newItemChoose = [...new Set(newChoose)]
+        // const ans = newChoose[Math.floor(Math.random() * (newChoose.length - 1))].name;
+        setChoose(newChoose[Math.floor(Math.random() * (newChoose.length - 1))].name);
+        // let result = document.getElementById('choose');
+        // result.innerText = ans
+        // setChoose(ans)
     }
     const deleteItem = () => {
         const newProduct = [];
         setProduct(newProduct)
         document.getElementById('choose').innerText = "";
     }
+
+  
     return (
         <div>
             <div className='store-bike'>
@@ -46,7 +53,12 @@ const Bikes = () => {
         <div className='order-container'>
             <div>
                 <p className='order'>Order Summary</p>
-                <p id='choose' style={{marginTop:60, fontSize:14, background:'aqua', padding:10, borderRadius:9, position:'fixed'}}></p>
+                {/* <p id='choose' style={{marginTop:60, fontSize:14, background:'aqua', padding:10, borderRadius:9, position:'fixed'}}></p> */}
+            </div>
+            <div>
+                {
+                    choose.map(item => <p key={item.id}>{item}</p>)
+                }
             </div>
 
             <div className='single-bike'>
